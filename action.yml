@@ -1,0 +1,28 @@
+name: 'Publish Docker image'
+author: 'Giacomo Leidi'
+description: 'Uses the git branch as the docker tag and pushes the image'
+inputs:
+  name:
+    description: 'The name of the image you would like to push'
+    required: true
+  username:
+    description: 'The login username for the registry'
+    required: true
+  password:
+    description: 'The login password for the registry'
+    required: true
+  image:
+    description: 'The image path'
+    required: true
+  registry:
+    description: 'Use registry for pushing to a custom registry'
+    required: false
+  workdir:
+    description: 'Use workdir when you would like to change the directory for building'
+    required: false
+  tag:
+    description: 'Use tags when you want to bring your own tags (separated by comma)'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
