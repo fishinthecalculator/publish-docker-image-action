@@ -20,9 +20,6 @@ inputs:
   workdir:
     description: 'Use workdir when you would like to change the directory for building'
     required: false
-  tag:
-    description: 'Use tags when you want to bring your own tags (separated by comma)'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'

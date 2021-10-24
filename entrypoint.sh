@@ -13,12 +13,11 @@ main() {
   echo "${INPUT_PASSWORD}" | docker login -u "${INPUT_USERNAME}" --password-stdin "${INPUT_REGISTRY}"
 
   docker load < "${INPUT_IMAGE}"
-  commit_tag="$(git tag --points-at HEAD)"
 
-  if [ -z "$commit_tag" ]; then
-    image_name="${INPUT_NAME}:${INPUT_TAG}"
+  if [ -n "$IMAGE_TAG" ]; then
+    image_name="${INPUT_NAME}:${IMAGE_TAG}"
   else
-    image_name="${INPUT_NAME}:${commit_tag}"
+    image_name="${INPUT_NAME}:latest"
   fi
 
   docker image tag guix:latest "$image_name"
