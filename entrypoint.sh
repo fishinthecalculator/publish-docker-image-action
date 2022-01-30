@@ -20,7 +20,7 @@ main() {
     image_name="${INPUT_NAME}:latest"
   fi
 
-  docker image tag "${INPUT_TAG}" "$image_name"
+  docker image tag "${IMAGE_NAME_TAG}" "$image_name"
 
   docker push "$image_name"
 

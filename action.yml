@@ -14,8 +14,6 @@ inputs:
   image:
     description: 'The input image path'
     required: true
-  tag:
-    description: 'The input image name:tag'
   registry:
     description: 'Use registry for pushing to a custom registry'
     required: false
