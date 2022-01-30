@@ -3,7 +3,7 @@ author: 'Giacomo Leidi'
 description: 'Uses the git branch as the docker tag and pushes the image'
 inputs:
   name:
-    description: 'The name of the image you would like to push'
+    description: 'The name of the output image you would like to push'
     required: true
   username:
     description: 'The login username for the registry'
@@ -12,8 +12,10 @@ inputs:
     description: 'The login password for the registry'
     required: true
   image:
-    description: 'The image path'
+    description: 'The input image path'
     required: true
+  image_name:
+    description: 'The input image name:tag'
   registry:
     description: 'Use registry for pushing to a custom registry'
     required: false

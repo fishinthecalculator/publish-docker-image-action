@@ -20,7 +20,7 @@ main() {
     image_name="${INPUT_NAME}:latest"
   fi
 
-  docker image tag mobilizon-reshare-scheduler:latest "$image_name"
+  docker image tag "${INPUT_IMAGE_NAME}" "$image_name"
 
   docker push "$image_name"
 
